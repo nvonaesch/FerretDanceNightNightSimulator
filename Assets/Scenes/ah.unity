@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 126153104}
   - component: {fileID: 126153103}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Rampe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 442825510}
   - component: {fileID: 442825509}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Mur sud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 1731045490}
   - component: {fileID: 1731045489}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Mur Ouest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 1795831783}
   - component: {fileID: 1795831782}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Mur Nord
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1050,7 +1050,7 @@ GameObject:
   - component: {fileID: 1801876503}
   - component: {fileID: 1801876502}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Scene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1255,7 +1255,7 @@ GameObject:
   - component: {fileID: 2107295915}
   - component: {fileID: 2107295914}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Mur Est
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
