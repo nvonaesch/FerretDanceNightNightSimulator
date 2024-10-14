@@ -21,6 +21,6 @@ public class lampeHautBas : MonoBehaviour
     {
         float newAngle = Mathf.PingPong(Time.time * vitesseRotation, angleAjouter) + angleInitial;
 
-        transform.localEulerAngles = new Vector3(newAngle, 0, 0);
+        transform.localEulerAngles = new Vector3(newAngle, transform.localEulerAngles.y, transform.localEulerAngles.z);
     }
 }
