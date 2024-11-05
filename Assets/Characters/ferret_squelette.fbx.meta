@@ -16,8 +16,7 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: "Avatar creation failed:\n\tCannot find root motion transform
-      'Cube'.\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -78,9 +77,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - 89baf4a3be6f17948ba2cdea0fdee83a
-  - ce5ec2f3c3e0f8546b04a34ed44c5195
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
