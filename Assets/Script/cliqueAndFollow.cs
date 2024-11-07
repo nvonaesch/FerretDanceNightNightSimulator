@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,14 +14,17 @@ public class cliqueAndFollow : MonoBehaviour
     private bool isHeld = false; // Variable pour savoir si l'objet est saisi
     private bool hasToGoToItsPlace = false ; // Variable pour savoir si l'objet doit aller à sa place sur la scène
     Vector3 objectSize ; //taille de l'objet (apparence et non collider)
-    private float moveSpeed = 2.0f; //vitesse de déplacement
+    private float moveSpeed = 10.0f; //vitesse de déplacement
     private Vector3 targetPosition; // Position cible pour la translation
     private Boolean arrived = false;
+    private Rigidbody rb;
+
+    GameObject score = GameObject.Find("score");
 
     private void Start()
     {
         interactable = GetComponent<XRGrabInteractable>();
-
+        rb = GetComponent<Rigidbody>();
         objectSize = GetComponent<Renderer>().bounds.size; //on récupère sa taille
 
         // Récupérer la caméra principale
@@ -47,7 +51,7 @@ public class cliqueAndFollow : MonoBehaviour
         // Une fois que le joueur l'a emmené sur place :
         if (hasToGoToItsPlace)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            rb.MovePosition(Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime));
 
             Ray ray = new Ray(transform.position, Vector3.down);
             RaycastHit hitInfo;
@@ -68,13 +72,13 @@ public class cliqueAndFollow : MonoBehaviour
                 hasToGoToItsPlace =false;
                 arrived = true;
 
-                if (Vector3.Angle(transform.up, Vector3.up) > 45f)
-                { //Pour empêcher la mascotte de tomber sur le côté
+                if ((transform.position.y - hitInfo.point.y) < 2)
+                {
                     transform.rotation = Quaternion.identity;
                 }
             }
         }
-        // Quand le furet arrive à sa place
+        // si le furet est censé être arrivé mais n'est pas à sa place
         if ((Vector3.Distance(transform.position, targetPosition) > 1f) && arrived == true)
         {
             transform.rotation = Quaternion.identity;
@@ -94,7 +98,7 @@ public class cliqueAndFollow : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo))
         {
             // on se positionne là où le sol est, en ajoutant 2 (hauteur du cube représentant le furet)
-            positionBehindCamera.y = hitInfo.point.y + 2;
+            positionBehindCamera.y = hitInfo.point.y + 1.95f;
         }
 
         // Placer l'objet à la nouvelle position
@@ -109,7 +113,7 @@ public class cliqueAndFollow : MonoBehaviour
         if ((other.CompareTag("scene")) && isHeld)
         {
             string myTag = gameObject.tag; //on récupère le tag de l'objet
-            isHeld = false; //l'objet est désaisi
+            isHeld = false; //l'objet est désaisi 
 
             switch (myTag)
             {
@@ -128,6 +132,15 @@ public class cliqueAndFollow : MonoBehaviour
                 interactable.enabled = false; // Désactiver le composant
                 Debug.Log("XRGrabInteractable désactivé.");
             }
+
+            transform.position = new Vector3(85, 7.5f, 73);
+
+            var script = score.GetComponent<updateScore>();
+            if (script != null)
+            {
+                script.incScore(1); // Appelle une fonction sur le script trouvé
+            }
+
             hasToGoToItsPlace = true;
         }
 
