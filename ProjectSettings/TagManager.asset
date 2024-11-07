@@ -9,6 +9,7 @@ TagManager:
   - furetB
   - furetC
   - bouton
+  - compteur
   layers:
   - Default
   - TransparentFX

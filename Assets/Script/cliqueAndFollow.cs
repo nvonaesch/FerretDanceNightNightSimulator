@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class cliqueAndFollow : MonoBehaviour
@@ -47,16 +48,30 @@ public class cliqueAndFollow : MonoBehaviour
         if (hasToGoToItsPlace)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-            
-            if (Vector3.Angle(transform.up, Vector3.up) > 45f){ //Pour empêcher la mascotte de tomber sur le côté
-                transform.rotation = Quaternion.identity; }
-            
+
+            Ray ray = new Ray(transform.position, Vector3.down);
+            RaycastHit hitInfo;
+
+            if (Physics.Raycast(ray, out hitInfo))
+            {
+                // on se positionne là où le sol est, en ajoutant 2 (hauteur du cube représentant le furet)
+                if ((transform.position.y - hitInfo.point.y) < 2)
+                {
+                    transform.rotation = Quaternion.identity;
+                }
+            }
+
 
             if (Vector3.Distance(transform.position, targetPosition) < 0.5f)
             {
                 transform.position = targetPosition;
                 hasToGoToItsPlace =false;
                 arrived = true;
+
+                if (Vector3.Angle(transform.up, Vector3.up) > 45f)
+                { //Pour empêcher la mascotte de tomber sur le côté
+                    transform.rotation = Quaternion.identity;
+                }
             }
         }
         // Quand le furet arrive à sa place
@@ -70,6 +85,17 @@ public class cliqueAndFollow : MonoBehaviour
     private void PositionBehindCamera()
     {
         Vector3 positionBehindCamera = cameraTransform.position - cameraTransform.forward * 2.0f; // se positionner à cette distance de la caméra
+
+
+        // le raycast permet de détecter ce qu'il y a en dessous
+        Ray ray = new Ray(positionBehindCamera, Vector3.down);
+        RaycastHit hitInfo;
+
+        if (Physics.Raycast(ray, out hitInfo))
+        {
+            // on se positionne là où le sol est, en ajoutant 2 (hauteur du cube représentant le furet)
+            positionBehindCamera.y = hitInfo.point.y + 2;
+        }
 
         // Placer l'objet à la nouvelle position
         transform.position = positionBehindCamera;
@@ -88,13 +114,13 @@ public class cliqueAndFollow : MonoBehaviour
             switch (myTag)
             {
                 case "furetA":
-                    targetPosition = new Vector3(100, 6.5f, 75);
+                    targetPosition = new Vector3(100, 7.5f, 75);
                     break;
                 case "furetB":
-                    targetPosition = new Vector3(105, 6.5f, 72);
+                    targetPosition = new Vector3(105,7.5f, 72);
                     break;
                 case "furetC":
-                    targetPosition = new Vector3(95, 6.5f, 73);
+                    targetPosition = new Vector3(95, 7.5f, 73);
                     break;
             }
             if (interactable != null)
