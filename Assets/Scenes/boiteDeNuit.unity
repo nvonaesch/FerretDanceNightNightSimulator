@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 66745469}
   - component: {fileID: 66745468}
   m_Layer: 0
-  m_Name: Excited
+  m_Name: ExcitedC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418,6 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28fd0f0cd5aa8dd47acf74ea3eaee51f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!95 &66745469
 Animator:
   serializedVersion: 5
@@ -3065,7 +3066,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: default
+  m_text: Score
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3409,6 +3410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f81cee26971e724894ea9340dba68b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: {fileID: 661044531}
+  furet: {fileID: 1880432724}
 --- !u!54 &685518735
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4674,6 +4677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f81cee26971e724894ea9340dba68b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: {fileID: 661044531}
+  furet: {fileID: 4236305385895903609}
 --- !u!54 &846788078
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5713,6 +5718,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f81cee26971e724894ea9340dba68b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: {fileID: 661044531}
+  furet: {fileID: 66745466}
 --- !u!54 &1155406127
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8989,7 +8996,7 @@ GameObject:
   - component: {fileID: 1880432727}
   - component: {fileID: 1880432726}
   m_Layer: 0
-  m_Name: Excited
+  m_Name: ExcitedB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9025,6 +9032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28fd0f0cd5aa8dd47acf74ea3eaee51f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!95 &1880432727
 Animator:
   serializedVersion: 5
@@ -13266,7 +13274,7 @@ GameObject:
   - component: {fileID: 4236305385895903610}
   - component: {fileID: 4236305385895903611}
   m_Layer: 0
-  m_Name: Excited
+  m_Name: ExcitedA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13305,6 +13313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28fd0f0cd5aa8dd47acf74ea3eaee51f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!33 &4238106328763364435
 MeshFilter:
   m_ObjectHideFlags: 0

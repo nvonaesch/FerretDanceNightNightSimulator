@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,13 +12,23 @@ public class updateScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreTexte.text = "0";
+        try{
+            scoreTexte.text = score.ToString();
+        }catch (NullReferenceException){}
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreTexte.text = score.ToString();
+        try{
+            scoreTexte.text = score.ToString() + " / 3 Furrets heureux";
+        }catch (NullReferenceException){
+
+         }
+        // if(scoreTexte!=null){
+        //     scoreTexte.text = score.ToString() + " / 3 Furrets heureux";
+        // }
+        
     }
 
     public void incScore(int nombre) {

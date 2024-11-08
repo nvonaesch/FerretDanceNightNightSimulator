@@ -18,8 +18,9 @@ public class cliqueAndFollow : MonoBehaviour
     private Vector3 targetPosition; // Position cible pour la translation
     private Boolean arrived = false;
     private Rigidbody rb;
+    public GameObject score;
 
-    GameObject score = GameObject.Find("score");
+    public GameObject furet;
 
     private void Start()
     {
@@ -36,6 +37,8 @@ public class cliqueAndFollow : MonoBehaviour
 
     private void OnGrab(XRBaseInteractor interactor) //quand on attrape l'objet
     {
+        var animator = furet.GetComponent<Animator>();
+        animator.Play("Danse");
         PositionBehindCamera(); // Positionner l'objet derrière la caméra
         isHeld = true; // Indiquer que l'objet est saisi
     }
@@ -127,6 +130,7 @@ public class cliqueAndFollow : MonoBehaviour
                     targetPosition = new Vector3(95, 7.5f, 73);
                     break;
             }
+
             if (interactable != null)
             {
                 interactable.enabled = false; // Désactiver le composant
@@ -136,6 +140,7 @@ public class cliqueAndFollow : MonoBehaviour
             transform.position = new Vector3(85, 7.5f, 73);
 
             var script = score.GetComponent<updateScore>();
+        
             if (script != null)
             {
                 script.incScore(1); // Appelle une fonction sur le script trouvé
