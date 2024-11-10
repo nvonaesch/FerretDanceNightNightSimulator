@@ -418,7 +418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28fd0f0cd5aa8dd47acf74ea3eaee51f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!95 &66745469
 Animator:
   serializedVersion: 5
@@ -9032,7 +9031,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28fd0f0cd5aa8dd47acf74ea3eaee51f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!95 &1880432727
 Animator:
   serializedVersion: 5
@@ -11226,9 +11224,9 @@ Transform:
   m_GameObject: {fileID: 1783952726277759496}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.04, y: -2.42, z: -0.81}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.04, y: -0.83, z: -0.81}
+  m_LocalScale: {x: 0.51, y: 0.51, z: 0.51}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8014958678308005932}
   - {fileID: 2881082973244711895}
@@ -11540,7 +11538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1783952726277759497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13313,7 +13311,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28fd0f0cd5aa8dd47acf74ea3eaee51f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!33 &4238106328763364435
 MeshFilter:
   m_ObjectHideFlags: 0
