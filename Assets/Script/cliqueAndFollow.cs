@@ -101,7 +101,7 @@ public class cliqueAndFollow : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo))
         {
             // on se positionne là où le sol est, en ajoutant 2 (hauteur du cube représentant le furet)
-            positionBehindCamera.y = hitInfo.point.y + 1.95f;
+            positionBehindCamera.y = hitInfo.point.y + 2f;
         }
 
         // Placer l'objet à la nouvelle position

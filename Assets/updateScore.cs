@@ -21,7 +21,7 @@ public class updateScore : MonoBehaviour
     void Update()
     {
         try{
-            scoreTexte.text = score.ToString() + " / 3 Furrets heureux";
+            scoreTexte.text = score.ToString() + " / 3 Furets heureux";
         }catch (NullReferenceException){
 
          }
